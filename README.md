@@ -56,6 +56,30 @@
 
 - ⑥ 设置后重启
 
+> **注意：**
+>
+> ① 安装设置过程中可能会遇到提示缺少固件的问题，可选择无视，亦可[下载缺失固件](https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/),导入到`/lib/firmware/<固件>`文件夹（若没有该文件夹，请先创建该文件夹）解决该问题。</br>
+>
+> ② 若希望为显卡添加模式设置，可在`/etc/initramfs-tools/modules`文件中添加如下内容：
+> 
+> ```shell
+> # 英特尔显卡
+> # KMS
+> intel_agp
+> drm
+> i915 modeset=1
+> 
+> # NVidia显卡
+> # KMS
+> drm
+> nouveau modeset=1
+> 
+> # ATI显卡
+> # KMS
+> drm
+> radeon modeset=1
+> ```
+
 ## English description:
 
 The repository is a `plymouth` theme that I am using or extracting Linux boot animation.</br>
@@ -113,3 +137,27 @@ Press Ctrl+Alt+F6 again and enter the following command to exit the preview:
 ```
 
 - ⑥ Restart after setting
+
+>**Note:**
+>
+>① During installation and setting, you may encounter the problem of missing firmware. You can either ignore it or [Download Missing Firmware]（https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/）, import to the `/lib/firmware/<firmware>` folder (if there is no such folder, please create it first) to solve the problem</ br>
+>
+>② If you want to add mode settings for the video card, you can add the following contents to the file `/etc/initramfs tools/modules`:
+> 
+> ```shell
+># Intel Graphics Card
+> # KMS
+> intel_ agp
+> drm
+> i915 modeset=1
+> 
+># NVidia graphics card
+> # KMS
+> drm
+> nouveau modeset=1
+> 
+># ATI Graphics Card
+> # KMS
+> drm
+> radeon modeset=1
+> ```
