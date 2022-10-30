@@ -1,4 +1,4 @@
-# `plymouth-themes`
+# `Plymouth Themes`
 
 ## 中文说明：
 
@@ -28,33 +28,42 @@
 
 - ② 复制该仓库中想用的`plymouth`主题（即开机动画）至`/usr/share/plymouth/themes/`文件夹中。
 
-- ③ 使用如下命令获得已安装的主题列表：
+- ③ 将`/etc/default/grub`文件中的`GRUB_CMDLINE_LINUX_DEFAULT`值修改为`quiet splash`以配置`GRUB`启用开机动画，修改后的值如下所示：
+
+    ```shell
+    GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
+    ```
+
+- ④ 使用如下命令更新`GRUB`：
+    
+    ```shell
+    # Debian及其发行版
+    $ sudo update-grub
+    # 或者
+    $ sudo update-grub2
+    
+    # Red Hat/CentOS/Fedora及其发行版
+    $ sudo grub-mkconfig -o /boot/grub/grub.cfg
+    # 或者
+    $ sudo grub2-mkconfig -o /boot/grub2/grub.cfg
+    
+    # ArchLinux及其发行版
+    $ sudo grub-mkconfig -o /boot/grub/grub.cfg
+    ```
+
+- ⑤ 使用如下命令获得已安装的主题列表：
 
     ```shell
     $ plymouth-set-default-theme -l
     ```
 
-- ④ 按 `Ctrl+Alt+F6` 切换终端，使用`root`登陆，使用如下命令以预览主题：
-
-    ```shell
-    # plymouthd
-    # plymouth --show-splash
-    ```
-
-    再按`Ctrl+Alt+F6`并输入如下命令退出预览：
-
-    ```shell
-    # plymouthd
-    # plymouth --show-splash
-    ```
-
-- ⑤ 使用如下命令设置喜欢的主题： 
+- ⑥ 使用如下命令设置喜欢的主题： 
 
     ```shell
     # plymouth-set-default-theme -R <theme name>
     ```
 
-- ⑥ 设置后重启
+- ⑦ 设置后重启
 
 > **注意：**
 >
@@ -110,53 +119,62 @@ Themes in this warehouse are copied from the `/usr/share/plymouth/themes/` folde
 
 - ② Copy the `ploymouth` theme (i.e. startup animation) you want to use in the warehouse to the `/usr/share/plymouth/themes/` folder.
 
-- ③ Use the following command to get the list of installed topics:
+- ③ Change the `GRUB` in the `/etc/default/grub` file_ CMDLINE_ LINUX_ Modify the DEFAULT value to `quiet splash` to configure `GRUB` to enable boot animation. The modified value is as follows:
+
+```shell
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
+```
+
+- ④ Use the following command to update `GRUB`:
+
+```shell
+# Debian and its distribution
+$ sudo update-grub
+# Or
+$ sudo update-grub2
+
+# Red Hat/CentOS/Fedora and its distribution
+$ sudo grub-mkconfig -o /boot/grub/grub.cfg
+# Or
+$ sudo grub2-mkconfig -o /boot/grub2/grub.cfg
+
+# ArchLinux and its distribution
+$ sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+- ⑤ Use the following command to get the list of installed topics:
 
 ```shell
 $ plymouth-set-default-theme -l
 ```
 
-- ④ Press` Ctrl+Alt+F6 `to switch terminals, use` root `to log in, and use the following command to preview the theme:
-
-```shell
-# plymouthd
-# plymouth --show-splash
-```
-
-Press Ctrl+Alt+F6 again and enter the following command to exit the preview:
-
-```shell
-# plymouthd
-# plymouth --show-splash
-```
-
-- ⑤ Use the following command to set your favorite theme:
+- ⑥ Use the following command to set your favorite theme:
 
 ```shell
 # plymouth-set-default-theme -R <theme name>
 ```
 
-- ⑥ Restart after setting
+- ⑦ Restart after setting
 
 >**Note:**
 >
->① During installation and setting, you may encounter the problem of missing firmware. You can either ignore it or [Download Missing Firmware](https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/), import to the `/lib/firmware/<firmware>` folder (if there is no such folder, please create it first) to solve the problem</ br>
+> ① During installation and setting, you may encounter the problem of missing firmware. You can either ignore it or [Download Missing Firmware](https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/), import to the `/lib/firmware/<firmware>` folder (if there is no such folder, please create it first) to solve the problem</ br>
 >
->② If you want to add mode settings for the video card, you can add the following contents to the file `/etc/initramfs tools/modules`:
+> ② If you want to add mode settings for the video card, you can add the following contents to the file `/etc/initramfs tools/modules`:
 > 
 > ```shell
-># Intel Graphics Card
+> # Intel Graphics Card
 > # KMS
 > intel_ agp
 > drm
 > i915 modeset=1
 > 
-># NVidia graphics card
+> # NVidia graphics card
 > # KMS
 > drm
 > nouveau modeset=1
 > 
-># ATI Graphics Card
+> # ATI Graphics Card
 > # KMS
 > drm
 > radeon modeset=1
