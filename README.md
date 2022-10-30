@@ -140,7 +140,7 @@ Press Ctrl+Alt+F6 again and enter the following command to exit the preview:
 
 >**Note:**
 >
->① During installation and setting, you may encounter the problem of missing firmware. You can either ignore it or [Download Missing Firmware]（https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/）, import to the `/lib/firmware/<firmware>` folder (if there is no such folder, please create it first) to solve the problem</ br>
+>① During installation and setting, you may encounter the problem of missing firmware. You can either ignore it or [Download Missing Firmware](https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/), import to the `/lib/firmware/<firmware>` folder (if there is no such folder, please create it first) to solve the problem</ br>
 >
 >② If you want to add mode settings for the video card, you can add the following contents to the file `/etc/initramfs tools/modules`:
 > 
