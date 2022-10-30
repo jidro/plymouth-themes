@@ -101,7 +101,7 @@ Themes in this warehouse are copied from the `/usr/share/plymouth/themes/` folde
 > `deep logo `is the default` Plymouth `theme of` deep `(boot animation)</br>
 > `elementary` is the default `Plymouth` theme of `elementary OS` (boot animation)</br>
 > `elegant-linnen-gray` is the default `Plymouth` theme of `MX Linux` (boot animation)</br>
-> `ubuntukylin logo` is the default `Plymouth` theme of Youqilin (boot animation)
+> `ubuntukylin logo` is the default `Plymouth` theme of Ukylin (boot animation)
 
 ### How to use
 
