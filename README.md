@@ -58,7 +58,7 @@
 
 > **注意：**
 >
-> ① 安装设置过程中可能会遇到提示缺少固件的问题，可选择无视，亦可[下载缺失固件](https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/),导入到`/lib/firmware/<固件>`文件夹（若没有该文件夹，请先创建该文件夹）解决该问题。</br>
+> ① 安装设置过程中可能会遇到提示缺少固件的问题，可选择无视，亦可[下载缺失固件](https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/)，导入到`/lib/firmware/<固件>`文件夹（若没有该文件夹，请先创建该文件夹）解决该问题。</br>
 >
 > ② 若希望为显卡添加模式设置，可在`/etc/initramfs-tools/modules`文件中添加如下内容：
 > 
