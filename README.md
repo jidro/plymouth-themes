@@ -96,7 +96,7 @@ Themes in this warehouse are copied from the `/usr/share/plymouth/themes/` folde
 
 ### How to use
 
-- ① Use the software installation tools (different tools for different distributions, such as` apt `in` Debian `,` pacman `in` ArchLinux `,` yum `or` dnf `,... in` Red Hat `/` CentOS`/`Fedora`) to install `plymouth`. If necessary, install `plymouth themes` together.
+- ① Use the software installation tools (different tools for different distributions, such as` apt `in` Debian `,` pacman `in` ArchLinux `,` yum `or` dnf `in` Red Hat `/` CentOS`/`Fedora`,... ) to install `plymouth`. If necessary, install `plymouth themes` together.
 
 >`Plymouth` comes with some themes:</br>
 >`Fade in`: "Simple theme with fading stars"</br>
